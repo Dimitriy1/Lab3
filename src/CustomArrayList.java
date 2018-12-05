@@ -67,6 +67,9 @@ public class CustomArrayList<T> {
         boolean flag = true;
         int j = 0;
         for (int i = 0; i < this.data.length; i++) {
+            if (i == this.data.length - 1) {
+                break;
+            }
             if (flag && var.equals(this.data[i])) {
                 flag = false;
             } else {
@@ -74,9 +77,11 @@ public class CustomArrayList<T> {
                 j++;
             }
         }
-        this.data = data;
-        size -= 1;
-        return (T)var;
+        if (j != this.data.length - 1) {
+            this.data = data;
+            size -= 1;
+        }
+        return !flag ? (T) var : null;
     }
 
     public T get(int index) {
@@ -86,7 +91,7 @@ public class CustomArrayList<T> {
 
         return (T) data[index];
     }
-
+    
     public int getSize() {
         return size;
     }
