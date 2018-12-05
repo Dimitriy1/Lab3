@@ -61,6 +61,23 @@ public class CustomArrayList<T> {
         data = new Object[10];
         size = 0;
     }
+    
+    public T remove(Object var) {
+        Object[] data = new Object[this.data.length - 1];
+        boolean flag = true;
+        int j = 0;
+        for (int i = 0; i < this.data.length; i++) {
+            if (flag && var.equals(this.data[i])) {
+                flag = false;
+            } else {
+                data[j] = this.data[i];
+                j++;
+            }
+        }
+        this.data = data;
+        size -= 1;
+        return (T)var;
+    }
 
     public T get(int index) {
         if (index > size || index < 0) {
