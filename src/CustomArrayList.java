@@ -70,7 +70,7 @@ public class CustomArrayList<T> {
         return (T) data[index];
     }
 
-    public void remove(Object var) {
+    public void removeAll(Object var) {
         int j = 0;
         int k = 0;
         for (int i = 0; i < this.data.length; i++) {
