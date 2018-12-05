@@ -70,28 +70,6 @@ public class CustomArrayList<T> {
         return (T) data[index];
     }
 
-    public void removeAll(Object var) {
-        int j = 0;
-        int k = 0;
-        for (int i = 0; i < this.data.length; i++) {
-            if (var.equals(this.data[i])) {
-                j++;
-            }
-        }
-        Object[] data = new Object[this.data.length - j];
-        if (j == 0) {
-            return;
-        }
-        for (int i = 0; i < this.data.length; i++) {
-            if (!var.equals(this.data[i])) {
-                data[k] = this.data[i];
-                k++;
-            }
-        }
-        this.data = data;
-        size -= j;
-    }
-
     public int getSize() {
         return size;
     }
