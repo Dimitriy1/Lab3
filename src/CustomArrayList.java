@@ -88,7 +88,6 @@ public class CustomArrayList<T> {
         if (index > size || index < 0) {
             throw new IndexOutOfBoundsException();
         }
-
         return (T) data[index];
     }
     
