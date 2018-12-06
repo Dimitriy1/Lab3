@@ -82,7 +82,6 @@ public class CustomArrayList<T> {
         return (T) var;
     }
     
-    
     public T get(int index) {
         if (index > size || index < 0) {
             throw new IndexOutOfBoundsException();
