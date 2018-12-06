@@ -56,6 +56,12 @@ public class CustomArrayList<E> implements List<E> {
 
     public boolean contains(Object value) {
         for (int i = 0; i < size; i++) {
+            if (this.data[i] == null && this.data[i] == value) {
+                return true;
+            }
+            if (this.data[i] == null && this.data[i] != value) {
+                continue;
+            }
             if (this.data[i].equals(value)) {
                 return true;
             }
@@ -133,7 +139,9 @@ public class CustomArrayList<E> implements List<E> {
         boolean flag = true;
         int j = 0;
         for (int i = 0; i < this.data.length; i++) {
-            if (flag && var.equals(this.data[i])) {
+            if (flag && this.data[i] == null && var == null) {
+                flag = false;
+            } else if (flag && (this.data[i] != null && var != null) && var.equals(this.data[i])) {
                 flag = false;
             } else {
                 data[j] = this.data[i];
