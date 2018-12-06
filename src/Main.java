@@ -71,7 +71,7 @@ public class Main {
 
         System.out.println(customArrayList.contains(9));
 
-        customArrayList.add(new Integer(9), 6);
+        customArrayList.add(7, new Integer(9));
 
         /*Exception in thread "main" java.lang.IndexOutOfBoundsException: Index < 0 or index > size isn't required*/
     }
