@@ -8,7 +8,7 @@ public class CustomArrayList<T> {
 
     public CustomArrayList(int capacity) {
         if (capacity < 0) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Capacity < 0 isn't required");
         }
         data = new Object[capacity];
     }
@@ -31,7 +31,7 @@ public class CustomArrayList<T> {
 
     public void add(T value, int index) {
         if (index > size || index < 0) {
-            throw new IndexOutOfBoundsException();
+            throw new IndexOutOfBoundsException("Index < 0 or index > size isn't required");
         }
         ensureCapacity(size + 1);
         Object[] data = new Object[this.data.length + 1];
@@ -84,7 +84,7 @@ public class CustomArrayList<T> {
     
     public T get(int index) {
         if (index > size || index < 0) {
-            throw new IndexOutOfBoundsException();
+            throw new IndexOutOfBoundsException("Index < 0 or index > size isn't required");
         }
         return (T) data[index];
     }
