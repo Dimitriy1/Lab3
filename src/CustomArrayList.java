@@ -47,29 +47,29 @@ public class CustomArrayList<T> {
         this.data = data;
         size++;
     }
-
+    
     public boolean contains(Object value) {
-        for (Object data : this.data) {
-            if (data.equals(value)) {
+        for (int i = 0; i < size; i++) {
+            if (this.data[i].equals(value)) {
                 return true;
             }
         }
         return false;
     }
-
+    
     public void clear() {
         data = new Object[10];
         size = 0;
     }
     
     public T remove(Object var) {
+        if (!contains(var)) {
+            return null;
+        }
         Object[] data = new Object[this.data.length - 1];
         boolean flag = true;
         int j = 0;
         for (int i = 0; i < this.data.length; i++) {
-            if (i == this.data.length - 1) {
-                break;
-            }
             if (flag && var.equals(this.data[i])) {
                 flag = false;
             } else {
@@ -77,13 +77,12 @@ public class CustomArrayList<T> {
                 j++;
             }
         }
-        if (j != this.data.length - 1) {
-            this.data = data;
-            size -= 1;
-        }
-        return !flag ? (T) var : null;
+        this.data = data;
+        size--;
+        return (T) var;
     }
-
+    
+    
     public T get(int index) {
         if (index > size || index < 0) {
             throw new IndexOutOfBoundsException();
