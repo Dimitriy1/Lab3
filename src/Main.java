@@ -16,7 +16,7 @@ public class Main {
 
         System.out.println("\n");
 
-        /*0 1 1000000 2 1000000*/
+        /*0 1 null 2 null*/
         customArrayList.add(1);
         customArrayList.add(null);
         customArrayList.add(2);
@@ -28,7 +28,7 @@ public class Main {
 
         System.out.println("\n");
 
-        /*0 1 2 1000000*/
+        /*0 1 null 2 null*/
         customArrayList.remove(new Integer(1000000));
 
         for (int i = 0; i < customArrayList.size(); i++) {
@@ -37,7 +37,7 @@ public class Main {
 
         System.out.println("\n");
 
-        /*0 1 2 1000000 4*/
+        /*0 1 null 2 null 4*/
 
         customArrayList.add(4);
 
@@ -47,7 +47,7 @@ public class Main {
 
         System.out.println("\n");
 
-        /*0 1 2 1000000*/
+        /*0 1 2 null 4*/
 
         customArrayList.remove(null);
 
@@ -57,7 +57,7 @@ public class Main {
 
         System.out.println("\n");
 
-        /*0 1 4 2 1000000*/
+        /*0 1 2 null 2 4*/
 
         customArrayList.add(4,new Integer(2));
 
